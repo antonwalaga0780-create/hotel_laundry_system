@@ -1,0 +1,14 @@
+USE hotel_laundry_db;
+
+CREATE TABLE IF NOT EXISTS laundry_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    item_name VARCHAR(100) NOT NULL,
+    item_type VARCHAR(50) NOT NULL,
+    quantity INT NOT NULL DEFAULT 0,
+    sent_quantity INT NOT NULL DEFAULT 0,
+    returned_quantity INT NOT NULL DEFAULT 0,
+    status VARCHAR(30) NOT NULL DEFAULT 'In Stock',
+    notes TEXT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
